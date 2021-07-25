@@ -5,12 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Friday | Promoções</title>
+    <title>Black Friday | Promoções | Spacial Travel</title>
 
-
+<!-- AVISO DE PÁGINA -->
     <script>
         window.alert("DESAFIO LANDING PAGE | GAMA ACADEMY | VTEX")
     </script>
+
+<!-- FUNÇÃO DE ARMAZENAMENTO -->
+    <script>
+        
+        function FormCadastro(){
+            var Nome = document.getElementById("Nome");
+            var Telefone = document.getElementById("Telefone");
+            var dataNasc = document.getElementById("dataNasc");
+            var email = document.getElementById("email");
+
+            var dados = JSON.parse(localStorage.getItem("dadosClientes"));
+
+            if (dados == null) {
+                localStorage.getItem("dadosClientes", "[]");
+                dados = [];
+            
+            }
+
+            var registro = {
+                nome: Nome.value,
+                telefone = Telefone.value,
+                datanascimento = dataNasc.value,
+                email = email.value,
+            }
+
+            dados.push(registro);
+
+            localStorage.setItem = ("dadosClientes", JSON.stringify(dados));
+        }
+
+    </script>
+
+<!-- DESIGN DE PÁGINA - CSS -->
 
     <style type="text/css">
         body {
@@ -41,7 +74,7 @@
             text-align: center;
             position: absolute;
             left: 390px;
-            top: 1700px;
+            top: 2050px;
             background-color: white;
         }
 
@@ -50,6 +83,8 @@
             align-content: center;
             display: flow-root;
             background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
             justify-content: center;
             height: 100vh;
             color: rgba(255, 255, 255, 0.87);
@@ -60,18 +95,38 @@
 
         .formsenviopromo {
             background-image: url("https://images.unsplash.com/photo-1529279363962-3480726a0a7e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YmxhY2slMjBzdGFycnklMjBza3l8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-            align-content: center;
-            display: flow-root;
+            align-content:center;
+            display:flow-root;
             background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
             justify-content: center;
             height: 50vh;
             color: rgba(255, 255, 255, 0.87);
             text-align: center;
             font-size: x-large;
+        }
+
+        .formscadastro{
+            background-image: url("https://images.unsplash.com/photo-1545529630-4546c1f0c890?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxpZ2h0JTIwc2t5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+            display:flow-root;
+            background-attachment:fixed;
+            background-repeat:space;
+            background-size: 1900px;
+            height: 50vh;
+            color: rgba(7, 5, 39, 0.87);
+            text-align: center;
+            font-size: x-large;
             border-top-width: 50vh;
+        }
+
+        .infos{
+            display: inline-block;
         }
     </style>
 </head>
+
+<!-- PRIMEIRO CONTATO -->
 
 <body>
 
@@ -87,7 +142,7 @@
     </div>
 
 
-
+<!-- SERVIÇOS EM IMAGENS -->
 
     <div class="viagensespaciais" id="viagemespacial">
         <h3>
@@ -111,7 +166,7 @@
         </h4>
     </div>
 
-
+<!-- INTERESSE EM SERVIÇOS-->
     <div class="formsenviopromo" id="formulario-Envio-Promocoes">
         <form>
             <fieldset>
@@ -122,7 +177,7 @@
                 <label for="CampoDeInteresse"><strong>Insira seu melhor e-mail para receber nossas ofertas: </strong>
                 </label>
                 <p> </p>
-                <input type="text" name="Preenchimento de e-mail" id="CampoDeInteresse">
+                <input type="text" name="PreenchimentoDeEmail" id="CampoDeInteresse">
                 <p> </p>
                 <legend><strong>Insira categorias desejadas: </strong> </legend>
                 <p> </p>
@@ -136,11 +191,44 @@
                 <input type="checkbox" name="Interesse 3" value="1" id="CampoDeInteresse5" />
             </fieldset>
 
-            <input type="submit" value="Enviar o formulário" />
+
+            <input type="submit" value="Concluir" onclick="FormCadastro()" />
         </form>
     </div>
 
 
+<!-- FORMULÁRIO DE CADASTRO -->
+    <div class="formscadastro" id="formulario-cadastro">
+        <form>
+
+            <fieldset>
+                <p> </p>
+                <label for="Cadastro"><strong>AINDA NÃO POSSUI CADASTRO?</strong>
+                </label>
+                <p> </p>
+                <label for="CampoDeCadastro"><strong> Cadastre-se para mais informações da Spacial Travel! </strong>
+                </label>
+                <p> </p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="dadosClientes">
+                <p> </p>
+                <label for="telefone">Telefone com DDD: </label>
+                <input type="text" name="telefone" id="dadosClientes">
+                <p> </p>
+                <label for="dataNasc">Data de Nascimento: </label>
+                <input type="text" name="dataNasc" id="dadosClientes">
+                <p> </p>
+                <label for="email">E-mail: </label>
+                <input type="text" name="email" id="dadosClientes">
+                <p> </p>
+
+
+            </fieldset>
+            <input type="submit" value="Concluir" onclick="FormCadastro()" />
+        </form>
+    </div>
+
+<!-- EMPRESAS -->
     <div class="parceiros" id="parceiros">
         <h5>DESAFIO <strong>HIRING CODERS</strong> | PROMOVIDO POR</h4>
 
